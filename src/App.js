@@ -33,8 +33,10 @@ function App(){
     return (
         <div>
             <SearchBar handleSubmit={handleSubmit} />
-            {message}
-            <Gallery data={data} />
+        {message}
+        <DataContext.Provider value ={data}>
+          <Gallery />
+        </DataContext.Provider>
         </div>
     )
 }

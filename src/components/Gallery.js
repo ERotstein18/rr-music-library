@@ -1,7 +1,10 @@
+import { useContext } from "react"
+import { DataContext } from "../contexts/DataContext"
 import GalleryItem from "./GalleryItem"
 
-function Gallery({ data }) {
-    const display = data.map((item, i) => {
+function Gallery() {
+    const dataFromContext = useContext (DataContext)
+    const display = dataFromContext.map((item, i) => {
         return <GalleryItem key={i} item={item} />
     })
     
@@ -13,3 +16,6 @@ function Gallery({ data }) {
 }
 
 export default Gallery
+
+//Hooks
+//useState, useEffect, useContext
